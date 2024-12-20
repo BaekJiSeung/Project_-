@@ -43,7 +43,7 @@ main.ipynb 와 모듈 metropolis_hastings.py, utils.py로 이루어져 있다.
 우선 영국,중국의 혈청유병률데이터를 불러온다. 각 데이터에서 연령대, 감염수, 총 표본 수를 추출하였다. 
 데이터를 통해 메트로폴리스헤이스팅스 모듈을 사용하여 각 데이터셋에서 파라미터인 lamda의 분포를 추정한다. 
 
-likelihood = sum(binom.logpmf(self.I, self.T, 1 - np.exp(-lambda_ * self.age))) 의 식을 통하여 각 각 파라미터 별 로그 likelihood를 계산하였고 그를 MCMC 알고리즘을 사용해 샘플을 만들었다. 또한 샘플의 정확도를 위하여 샘플 중 앞의 1000개의 샘플은 burn in으로 제거하고, 샘플이 얼마나 효과적인지 utils.py 모듈에서의 ESS 를 통하여 샘플이 효과적인 정도를 계산하였다. 또한 파라미터에 대한 psterior분포를 히스토그램으로 시각화하고 확률분포의 95% 신뢰구간을 계산한다.
+likelihood = sum(binom.logpmf(self.I, self.T, 1 - np.exp(-lambda_ * self.age))) 의 식을 통하여 각 각 파라미터 별 로그 likelihood를 계산하였고 그를 MCMC 알고리즘을 사용해 샘플을 만들었다. 또한 샘플의 정확도를 위하여 샘플 중 앞의 1000개의 샘플은 burn in으로 제거하고, 샘플이 얼마나 효과적인지 utils.py 모듈에서의 ESS 를 통하여 샘플이 효과적인 정도를 계산하였다. 또한 파라미터에 대한 posterior분포를 히스토그램으로 시각화하고 확률분포의 95% 신뢰구간을 계산한다.
 계산한 lambda값을 통해 기본재생산지수 R0과 herd immunity H를 계산하였다.
 
 
